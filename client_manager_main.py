@@ -154,27 +154,27 @@ def async_dec(awaitable_func):
 
 
 # send client name to server_status
-# @async_dec
-# async def register_client():
-#     global manager, inform_SE
+@async_dec
+async def register_client():
+    global manager, inform_SE
 
-#     res = requests.put(inform_SE + 'RegisterFLTask',
-#                        data=json.dumps({
-#                            'FL_task_ID': manager.task_id,
-#                            'Device_mac': manager.client_mac,
-#                            'Device_hostname': manager.client_name,
-#                            'Device_online': manager.client_online,
-#                            'Device_training': manager.client_training,
-#                        }))
+    res = requests.put(inform_SE + 'RegisterFLTask',
+                       data=json.dumps({
+                           'FL_task_ID': manager.task_id,
+                           'Device_mac': manager.client_mac,
+                           'Device_hostname': manager.client_name,
+                           'Device_online': manager.client_online,
+                           'Device_training': manager.client_training,
+                       }))
 
-#     if res.status_code == 200:
-#         pass
-#     else:
-#         logging.error('FLSe/RegisterFLTask: server_ST offline')
-#         pass
+    if res.status_code == 200:
+        pass
+    else:
+        logging.error('FLSe/RegisterFLTask: server_ST offline')
+        pass
 
-#     await asyncio.sleep(14)
-#     return manager
+    await asyncio.sleep(14)
+    return manager
 
 
 # check Server Status
@@ -281,7 +281,7 @@ async def start_training():
     # logging.info(f'start_training - FL Client Learning: {manager.FL_learning}')
     # logging.info(f'start_training - FL Client Online: {manager.FL_client_online}')
     # logging.info(f'start_training - FL Server Status: {manager.FL_ready}')
-
+    logging.info('Check client online info')
     # Check if the FL_task_status is not None
     if manager.task_status:
         if manager.client_online and (not manager.client_training) and manager.FL_ready:
