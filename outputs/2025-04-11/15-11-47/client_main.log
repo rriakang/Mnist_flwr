@@ -1,0 +1,53 @@
+[2025-04-11 15:11:47,274][root][INFO] - FL_Task - {"dataset": "MNIST", "start_execution_time": "2025-04-11 15:11:47"}
+[2025-04-11 15:11:47,335][__main__][INFO] - data loaded
+[2025-04-11 15:11:47,359][__main__][INFO] - Latest Local Model download
+[2025-04-11 15:11:47,360][root][INFO] - downloaded local_model_name: MNISTClassifier_local_model_V2.pth
+[2025-04-11 15:11:47,372][root][INFO] - init model_type: hyperparameter
+[2025-04-11 15:13:42,025][root][INFO] - bulid model
+[2025-04-11 15:13:42,025][root][INFO] - FL start
+[2025-04-11 15:13:42,035][client_api][INFO] - FL_server_IP:port - ccl.gachon.ac.kr:40025
+[2025-04-11 15:13:42,037][root][INFO] - FL learning ready
+[2025-04-11 15:13:42,037][root][INFO] - fl_task_id: mnist
+[2025-04-11 15:13:42,037][root][INFO] - dataset: MNIST
+[2025-04-11 15:13:42,037][root][INFO] - output_size: 10
+[2025-04-11 15:13:42,037][root][INFO] - validation_split: 0.2
+[2025-04-11 15:13:42,038][root][INFO] - model_type: hyperparameter
+[2025-04-11 15:13:42,038][root][INFO] - wandb_key: 38f6cf3c2c37660d42ebfe8ab434b72d34be3b31
+[2025-04-11 15:13:42,038][root][INFO] - wandb_account: rirakang@gachon.ac.kr
+[2025-04-11 15:13:43,706][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated. 
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below: 
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-04-11 15:13:43,708][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-04-11 15:13:43,720][flwr][DEBUG] - Opened insecure gRPC connection (no certificates were passed)
+[2025-04-11 15:13:43,721][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2025-04-11 15:13:43,722][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2025-04-11 15:13:43,725][flwr][DEBUG] - ChannelConnectivity.TRANSIENT_FAILURE
+[2025-04-11 15:13:43,928][flwr][DEBUG] - gRPC channel closed
+[2025-04-11 15:13:43,929][root][INFO] - [E][PC0002] learning <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-11T15:13:43.725696733+09:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"}"
+>
+[2025-04-11 15:13:43,930][root][INFO] - notify_fail start
+[2025-04-11 15:13:43,949][root][ERROR] - trainFin

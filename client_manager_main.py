@@ -233,40 +233,44 @@ async def check_flclient_online():
     if not manager.client_training:
         try:
             loop = asyncio.get_event_loop()
+            # 클라이언트 /online
             res_on = await loop.run_in_executor(None, requests.get, ('http://' + manager.FL_client + '/online'))
             if (res_on.status_code == 200) and (res_on.json()['client_online']):
                 manager.client_online = res_on.json()['client_online']
                 manager.client_training = res_on.json()['client_start']
                 manager.task_id = res_on.json()['task_id']
                 logging.info('client_online')
-
             else:
                 logging.info('client offline')
-                pass
         except requests.exceptions.ConnectionError:
             logging.info('client offline')
             pass
-        
-        res_task = requests.put(inform_SE + 'RegisterFLTask',
-                       data=json.dumps({
-                           'FL_task_ID': manager.task_id,
-                           'Device_mac': manager.client_mac,
-                           'Device_hostname': manager.client_name,
-                           'Device_online': manager.client_online,
-                           'Device_training': manager.client_training,
-                       }))
 
-        if res_task.status_code == 200:
-            pass
-        else:
-            logging.error('FLSe/RegisterFLTask: server_ST offline')
-            pass
-        
-    else:
-        pass
-    
+        # 여기가 핵심 – inform_SE 대신 직접 server_url 구성
+        server_url = f"http://{manager.server_ST}/FLSe/"
+
+        # RegisterFLTask 호출
+        data_payload = {
+            'FL_task_ID': manager.task_id,
+            'Device_mac': manager.client_mac,
+            'Device_hostname': manager.client_name,
+            'Device_online': manager.client_online,
+            'Device_training': manager.client_training,
+            # 필요하다면 'model_type': 'hyperparameter' 등 넣을 수도 있음
+        }
+        try:
+            res_task = requests.put(server_url + 'RegisterFLTask', data=json.dumps(data_payload))
+            if res_task.status_code == 200:
+                logging.info("RegisterFLTask success")
+            else:
+                logging.error('FLSe/RegisterFLTask: server_ST offline')
+        except Exception as e:
+            logging.error(f"[E] registerFLTask: {e}")
+
     await asyncio.sleep(6)
     return manager
+
+
 
 
 # Helper function to make the POST request

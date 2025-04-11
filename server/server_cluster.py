@@ -1,3 +1,5 @@
+
+#server_cluster.py
 import flwr as fl
 from flwr.server.strategy import FedAvg
 import numpy as np
@@ -135,7 +137,7 @@ class GeneticCFLStrategy(FedAvg):
             X = np.column_stack((lr_list, bs_list))
             X_scaled = StandardScaler().fit_transform(X)
 
-            dbscan = DBSCAN(eps=0.1, min_samples=2)
+            dbscan = DBSCAN(eps=0.1, min_samples=1)
             labels = dbscan.fit_predict(X_scaled)
 
             num_clusters = len(set(labels)) - (1 if -1 in labels else 0)
