@@ -20,3 +20,4 @@ config: {'learning_rate': 0, 'optimizer': '', 'dataset': '', 'model_architecture
 2025-04-14 11:02:34,917 INFO    MainThread:1217757 [wandb_run.py:_redirect():2371] Wrapping output streams.
 2025-04-14 11:02:34,917 INFO    MainThread:1217757 [wandb_run.py:_redirect():2394] Redirects installed.
 2025-04-14 11:02:34,919 INFO    MainThread:1217757 [wandb_init.py:init():1056] run started, returning control to user process
+2025-04-14 11:37:15,951 INFO    MsgRouterThr:1217757 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

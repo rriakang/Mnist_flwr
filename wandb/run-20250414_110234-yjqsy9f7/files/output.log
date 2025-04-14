@@ -443,3 +443,13 @@ grpc._channel._MultiThreadedRendezvous: <_MultiThreadedRendezvous of RPC that te
 [32mINFO[0m:     127.0.0.1:49158 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
 [32mINFO[0m:     127.0.0.1:54238 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
 [32mINFO[0m:     127.0.0.1:38562 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38570 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45430 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45438 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53378 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42548 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m1217757[0m]
+[2025-04-14 11:37:15,838][root][INFO] - ccl-e-server;b0:7b:25:0e:e7:96-client close
