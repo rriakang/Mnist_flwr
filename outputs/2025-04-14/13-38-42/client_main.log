@@ -3,3 +3,51 @@
 [2025-04-14 13:38:42,866][__main__][INFO] - Latest Local Model download
 [2025-04-14 13:38:42,866][root][INFO] - downloaded local_model_name: MNISTClassifier_local_model_V2.pth
 [2025-04-14 13:38:42,880][root][INFO] - init model_type: Pytorch
+[2025-04-14 13:41:55,534][root][INFO] - bulid model
+[2025-04-14 13:41:55,535][root][INFO] - FL start
+[2025-04-14 13:41:55,545][client_api][INFO] - FL_server_IP:port - ccl.gachon.ac.kr:40025
+[2025-04-14 13:41:55,547][root][INFO] - FL learning ready
+[2025-04-14 13:41:55,547][root][INFO] - fl_task_id: mnist
+[2025-04-14 13:41:55,547][root][INFO] - dataset: MNIST
+[2025-04-14 13:41:55,547][root][INFO] - output_size: 10
+[2025-04-14 13:41:55,547][root][INFO] - validation_split: 0.2
+[2025-04-14 13:41:55,548][root][INFO] - model_type: Pytorch
+[2025-04-14 13:41:55,548][root][INFO] - wandb_key: 38f6cf3c2c37660d42ebfe8ab434b72d34be3b31
+[2025-04-14 13:41:55,548][root][INFO] - wandb_account: rirakang@gachon.ac.kr
+[2025-04-14 13:41:57,249][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated. 
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below: 
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-04-14 13:41:57,252][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+        
+[2025-04-14 13:41:57,265][flwr][DEBUG] - Opened insecure gRPC connection (no certificates were passed)
+[2025-04-14 13:41:57,267][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2025-04-14 13:41:57,268][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2025-04-14 13:41:57,273][flwr][DEBUG] - ChannelConnectivity.TRANSIENT_FAILURE
+[2025-04-14 13:41:57,476][flwr][DEBUG] - gRPC channel closed
+[2025-04-14 13:41:57,477][root][INFO] - [E][PC0002] learning <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed", grpc_status:14, created_time:"2025-04-14T13:41:57.273526941+09:00"}"
+>
+[2025-04-14 13:41:57,477][root][INFO] - notify_fail start
+[2025-04-14 13:41:57,499][root][ERROR] - trainFin
