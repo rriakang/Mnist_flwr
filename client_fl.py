@@ -231,7 +231,8 @@ class FLClient(fl.client.NumPyClient):
                 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
                 self.device = device
 
-                logger.info(f"[Client {self.client_name}] train_loader size: {len(self.train_loader)}")
+                # 수정: DataLoader 대신 dataset의 크기를 출력
+                logger.info(f"[Client {self.client_name}] train_dataset size: {len(self.train_loader.dataset)}")
 
                 self.set_parameters(parameters)
 
@@ -240,10 +241,10 @@ class FLClient(fl.client.NumPyClient):
                 batch_size = config["batch_size"]
                 lr = config["learning_rate"]
 
-                # 실제 local_train
+                # 수정: self.train_loader.dataset를 전달하도록 변경
                 loss = client_utils.local_train(
                     model=self.model,
-                    train_subset=self.train_loader,
+                    train_subset=self.train_loader.dataset,  # ← 수정: Dataset을 전달
                     lr=lr,
                     batch_size=batch_size,
                     epochs=epochs,
@@ -251,12 +252,13 @@ class FLClient(fl.client.NumPyClient):
                 )
 
                 parameters_prime = self.get_parameters()
-                num_examples_train = len(self.train_loader)
+                # 수정: 예제 수는 DataLoader가 아닌 dataset의 길이를 사용
+                num_examples_train = len(self.train_loader.dataset)
 
                 os.makedirs(os.path.dirname(model_path), exist_ok=True)
                 torch.save(self.model.state_dict(), model_path + '.pth')
 
-                # 서버 side GeneticCFLStrategy는 "loss", "lr", "bs" 키를 기대
+                # GeneticCFLStrategy는 "loss", "lr", "bs" 키를 기대
                 metrics = {
                     "loss": float(loss),
                     "lr": float(lr),
@@ -268,6 +270,7 @@ class FLClient(fl.client.NumPyClient):
             except Exception as e:
                 logger.error(f"[Client {self.client_name}] Exception in fit (hyperparameter): {e}")
                 raise e
+
         else:
             raise ValueError("Unsupported model_type")
 
@@ -316,7 +319,6 @@ class FLClient(fl.client.NumPyClient):
             test_loss = 0.0
             test_accuracy = 0.0
             num_examples_test = 1
-
         elif self.model_type == "hyperparameter":
             try:
                 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -328,10 +330,10 @@ class FLClient(fl.client.NumPyClient):
                 bs = config["batch_size"]
                 local_epochs = config["local_epochs"]
 
-                # hyperparameter 모드: evaluate에서도 local_train을 하는 예시(주의!)
+                # 수정: DataLoader가 아닌 dataset을 전달하도록 변경
                 loss = client_utils.local_train(
                     model=self.model,
-                    train_subset=self.train_loader,
+                    train_subset=self.train_loader.dataset,  # ← 수정: Dataset 전달
                     lr=lr,
                     batch_size=bs,
                     epochs=local_epochs,
@@ -339,7 +341,7 @@ class FLClient(fl.client.NumPyClient):
                 )
 
                 parameters_prime = self.get_parameters()
-                num_examples_test = len(self.train_loader)
+                num_examples_test = len(self.train_loader.dataset)
                 # "loss", "lr", "bs"
                 metrics = {
                     "loss": float(loss),
@@ -352,6 +354,7 @@ class FLClient(fl.client.NumPyClient):
             except Exception as e:
                 logger.error(f"[Client {self.client_name}] Exception in evaluate (hyperparameter): {e}")
                 raise e
+
         else:
             raise ValueError("Unsupported model_type")
 
