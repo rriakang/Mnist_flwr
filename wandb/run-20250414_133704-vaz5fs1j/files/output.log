@@ -1,0 +1,150 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated.
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below:
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 13:37:05,901][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated.
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below:
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 13:37:05,902][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 13:37:05,913][flwr][DEBUG] - Opened insecure gRPC connection (no certificates were passed)
+[2025-04-14 13:37:05,914][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2025-04-14 13:37:05,915][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2025-04-14 13:37:05,920][flwr][DEBUG] - ChannelConnectivity.TRANSIENT_FAILURE
+[2025-04-14 13:37:06,122][flwr][DEBUG] - gRPC channel closed
+[2025-04-14 13:37:06,123][root][INFO] - [E][PC0002] learning <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-14T13:37:05.920525093+09:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"}"
+>
+[2025-04-14 13:37:06,124][root][INFO] - notify_fail start
+[2025-04-14 13:37:06,147][root][ERROR] - trainFin
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/responses.py", line 160, in __call__
+    await self.background()
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/background.py", line 41, in __call__
+    await task()
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/background.py", line 26, in __call__
+    await self.func(*self.args, **self.kwargs)
+  File "/home/ccl/safer/FedOps/MNIST/app.py", line 211, in fl_client_start
+    raise e
+  File "/home/ccl/safer/FedOps/MNIST/app.py", line 174, in fl_client_start
+    await loop.run_in_executor(None, client_start)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 731, in start_numpy_client
+    start_client(
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 201, in start_client
+    start_client_internal(
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 438, in start_client_internal
+    message = receive()
+              ^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/grpc_client/connection.py", line 142, in receive
+    proto = next(server_message_iterator)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/grpc/_channel.py", line 543, in __next__
+    return self._next()
+           ^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/grpc/_channel.py", line 969, in _next
+    raise self
+grpc._channel._MultiThreadedRendezvous: <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-14T13:37:05.920525093+09:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"}"
+>
+[32mINFO[0m:     127.0.0.1:35464 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35466 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55504 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51364 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51380 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47132 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35050 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35066 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44258 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44262 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39462 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43876 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43890 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59386 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m1413043[0m]
+[2025-04-14 13:38:35,229][root][INFO] - ccl-e-server;b0:7b:25:0e:e7:96-client close

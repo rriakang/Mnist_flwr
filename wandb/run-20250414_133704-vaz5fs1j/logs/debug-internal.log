@@ -1,0 +1,11 @@
+{"time":"2025-04-14T13:37:04.967825196+09:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/ccl/safer/FedOps/MNIST/wandb/run-20250414_133704-vaz5fs1j/logs/debug-core.log"}
+{"time":"2025-04-14T13:37:05.404641329+09:00","level":"INFO","msg":"created new stream","id":"vaz5fs1j"}
+{"time":"2025-04-14T13:37:05.404768516+09:00","level":"INFO","msg":"stream: started","id":"vaz5fs1j"}
+{"time":"2025-04-14T13:37:05.404795419+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"vaz5fs1j"}
+{"time":"2025-04-14T13:37:05.404821738+09:00","level":"INFO","msg":"handler: started","stream_id":"vaz5fs1j"}
+{"time":"2025-04-14T13:37:05.404860619+09:00","level":"INFO","msg":"sender: started","stream_id":"vaz5fs1j"}
+{"time":"2025-04-14T13:37:05.782784883+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-14T13:38:35.901773491+09:00","level":"INFO","msg":"stream: closing","id":"vaz5fs1j"}
+{"time":"2025-04-14T13:38:35.901825905+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-14T13:38:35.901880025+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-14T13:38:36.933911118+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}

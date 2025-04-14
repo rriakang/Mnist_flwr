@@ -1,0 +1,781 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated.
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below:
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 12:06:22,651][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated.
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below:
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 12:06:22,652][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 12:06:22,666][flwr][DEBUG] - Opened insecure gRPC connection (no certificates were passed)
+[2025-04-14 12:06:22,670][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2025-04-14 12:06:22,671][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2025-04-14 12:06:22,675][flwr][DEBUG] - ChannelConnectivity.TRANSIENT_FAILURE
+[2025-04-14 12:06:22,878][flwr][DEBUG] - gRPC channel closed
+[2025-04-14 12:06:22,879][root][INFO] - [E][PC0002] learning <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-14T12:06:22.674657133+09:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"}"
+>
+[2025-04-14 12:06:22,880][root][INFO] - notify_fail start
+[2025-04-14 12:06:22,899][root][ERROR] - trainFin
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/responses.py", line 160, in __call__
+    await self.background()
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/background.py", line 41, in __call__
+    await task()
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/background.py", line 26, in __call__
+    await self.func(*self.args, **self.kwargs)
+  File "/home/ccl/safer/FedOps/MNIST/app.py", line 211, in fl_client_start
+    raise e
+  File "/home/ccl/safer/FedOps/MNIST/app.py", line 174, in fl_client_start
+    await loop.run_in_executor(None, client_start)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 731, in start_numpy_client
+    start_client(
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 201, in start_client
+    start_client_internal(
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 438, in start_client_internal
+    message = receive()
+              ^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/grpc_client/connection.py", line 142, in receive
+    proto = next(server_message_iterator)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/grpc/_channel.py", line 543, in __next__
+    return self._next()
+           ^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/grpc/_channel.py", line 969, in _next
+    raise self
+grpc._channel._MultiThreadedRendezvous: <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-14T12:06:22.674657133+09:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"}"
+>
+[32mINFO[0m:     127.0.0.1:33536 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39056 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42630 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42638 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33958 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56984 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56988 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55468 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47764 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47774 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35358 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35370 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46790 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56206 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56218 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48632 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49396 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49400 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60684 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34614 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34628 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57462 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60044 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60058 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40310 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56028 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56038 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51688 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33362 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33370 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56386 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56396 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59936 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52984 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52988 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35384 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36678 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36686 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43734 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33278 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33280 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50168 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59974 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59976 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36774 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40562 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40578 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59376 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50986 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50990 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43984 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57852 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57858 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38072 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38074 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38776 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47940 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47944 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58010 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56844 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56860 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34786 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33136 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33138 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49080 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46326 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46336 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58374 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52542 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52556 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51060 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39074 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39080 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48192 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45548 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45550 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47980 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47988 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51026 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34370 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34372 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50108 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55666 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55676 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48752 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52110 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52120 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33808 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50116 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50126 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39794 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58866 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58868 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38536 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37070 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37074 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43320 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36104 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36110 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49034 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49040 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50532 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35822 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35830 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51248 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46096 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46112 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47032 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50346 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50352 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59556 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41584 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41588 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46784 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53052 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53066 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58276 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50982 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50994 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37172 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39794 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39802 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59520 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59530 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34948 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43544 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43548 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51620 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40380 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40382 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34316 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37162 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37168 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50214 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53646 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53660 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38254 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42472 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42482 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46524 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45630 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45646 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45836 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48314 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48324 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49704 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49714 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60964 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41738 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41754 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49618 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45642 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45648 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53532 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55316 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55324 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46106 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52270 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52284 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41752 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44714 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44718 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41574 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40056 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40060 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38310 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53706 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53714 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60748 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60760 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43314 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44068 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44080 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39486 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39018 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39032 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58622 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40264 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40272 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36242 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57236 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57246 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55732 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34256 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34266 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38678 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60748 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60764 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36778 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34846 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34848 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36128 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36134 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42308 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60602 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60612 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41442 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35454 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35470 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60542 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58856 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58872 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47742 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36910 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36918 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47644 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39230 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39232 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43140 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56794 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56800 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54132 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52484 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52498 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60222 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60224 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35274 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43094 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43106 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36598 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57654 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57658 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38548 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43478 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43494 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47972 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53724 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53734 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54676 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41472 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41478 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47696 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40364 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40368 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46304 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55132 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55134 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36772 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36778 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45840 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60202 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60210 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35076 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56300 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56314 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44454 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42046 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42060 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45802 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:32970 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:32976 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47108 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53886 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53902 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56708 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45010 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45022 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37194 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37606 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37608 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59384 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59398 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39134 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50642 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50658 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45342 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59092 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59104 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53918 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49108 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49120 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52730 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35640 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35650 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52056 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51694 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51704 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56186 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53086 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53098 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55176 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35656 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35662 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33392 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33406 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43348 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:32878 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:32880 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33456 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53020 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53024 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34296 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34802 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34804 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45440 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43582 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43584 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57706 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55538 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55540 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42916 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55096 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55112 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54040 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40280 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40286 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45376 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45384 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48214 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53442 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53452 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47196 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43020 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43036 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35154 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36402 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36414 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39336 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60492 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60496 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51308 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46340 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46354 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52134 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47910 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47924 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38156 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53690 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53702 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56276 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56278 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47114 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51740 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51754 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41766 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46192 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46204 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58824 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56510 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56516 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38484 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50476 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50486 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60146 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47670 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47684 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36852 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45436 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45442 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41608 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36282 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36296 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40326 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40340 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44630 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35796 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35798 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53064 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51664 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51672 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:32932 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44140 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44148 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54976 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52508 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52522 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53078 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51190 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51202 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:47570 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52512 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52516 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36542 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42524 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42526 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50052 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50064 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45526 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54144 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54148 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33394 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34682 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34686 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48256 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50732 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50746 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46406 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35274 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35282 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46938 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49792 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49800 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49358 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54218 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54230 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53724 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42276 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42288 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58472 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58480 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36464 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41710 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41724 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36000 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51798 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51808 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33466 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54618 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54628 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56228 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35364 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35374 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39140 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57630 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57634 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43534 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45006 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45014 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34320 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56690 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56704 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40192 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40204 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37758 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39048 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39062 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57246 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37652 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37654 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36320 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34362 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34374 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45522 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51526 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51542 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41944 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49186 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49190 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:41876 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54080 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54088 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51808 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54958 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54964 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59758 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59770 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46700 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44408 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44410 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51570 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53768 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53782 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42934 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50450 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50462 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36780 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60594 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60604 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46668 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39474 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39488 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52370 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50700 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50708 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52090 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52104 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54082 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59526 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59532 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35744 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37942 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37950 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54924 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35586 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35602 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45830 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39822 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39836 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35286 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51124 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51130 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55016 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48054 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48064 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36522 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55200 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55206 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44748 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44760 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:33024 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49586 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49594 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60980 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44700 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44710 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59262 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60190 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60192 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43566 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39112 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39116 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36690 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35638 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35642 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35160 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53124 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53126 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50198 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46706 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46720 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56042 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56046 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38520 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38208 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38218 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52830 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52038 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52052 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50038 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57796 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57798 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51508 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43594 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43596 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58178 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49372 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49388 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42608 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60896 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60906 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50230 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35410 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:35422 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60844 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60848 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48524 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42918 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42920 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60814 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48678 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48686 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52556 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53370 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53382 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:39664 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49456 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49460 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44322 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51642 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51656 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48624 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54626 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54638 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50918 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42646 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42650 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56584 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56590 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:38890 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51100 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:51112 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54564 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54288 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54302 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37424 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34034 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34036 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53918 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46626 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46642 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49230 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57276 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     Shutting down
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.
+[32mINFO[0m:     Finished server process [[36m1304510[0m]
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/http/client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/http/client.py", line 1041, in _send_output
+    self.send(msg)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/http/client.py", line 979, in send
+    self.connect()
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f13f4f468d0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8004): Max retries exceeded with url: /flclient_out (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f13f4f468d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ccl/safer/FedOps/MNIST/client_main.py", line 78, in main
+    fl_client.start()
+  File "/home/ccl/safer/FedOps/MNIST/app.py", line 237, in start
+    client_api.ClientMangerAPI().get_client_out()
+  File "/home/ccl/safer/FedOps/MNIST/client_api.py", line 36, in get_client_out
+    requests.get(self.client_manager_addr + '/flclient_out')
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8004): Max retries exceeded with url: /flclient_out (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f13f4f468d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

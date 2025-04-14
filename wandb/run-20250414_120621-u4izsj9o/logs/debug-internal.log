@@ -1,0 +1,11 @@
+{"time":"2025-04-14T12:06:21.781685376+09:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/ccl/safer/FedOps/MNIST/wandb/run-20250414_120621-u4izsj9o/logs/debug-core.log"}
+{"time":"2025-04-14T12:06:22.2190915+09:00","level":"INFO","msg":"created new stream","id":"u4izsj9o"}
+{"time":"2025-04-14T12:06:22.219165806+09:00","level":"INFO","msg":"stream: started","id":"u4izsj9o"}
+{"time":"2025-04-14T12:06:22.219195998+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"u4izsj9o"}
+{"time":"2025-04-14T12:06:22.219264089+09:00","level":"INFO","msg":"handler: started","stream_id":"u4izsj9o"}
+{"time":"2025-04-14T12:06:22.219208874+09:00","level":"INFO","msg":"sender: started","stream_id":"u4izsj9o"}
+{"time":"2025-04-14T12:06:22.538414363+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-14T13:08:33.70846783+09:00","level":"INFO","msg":"stream: closing","id":"u4izsj9o"}
+{"time":"2025-04-14T13:08:33.708509949+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-14T13:08:33.708594799+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-14T13:08:34.503418869+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}

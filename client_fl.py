@@ -21,6 +21,7 @@ if "MONITORING" in os.environ:
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s [%(levelname)8.8s] %(message)s",
                     handlers=handlers_list)
 logger = logging.getLogger(__name__)
+
 os.environ["TOKENIZERS_PARALLELISM"] = "true"
 os.environ["RAY_DISABLE_DOCKER_CPU_WARNING"] = "1"
 warnings.filterwarnings("ignore", category=UserWarning)
