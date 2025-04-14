@@ -120,7 +120,7 @@ class FLServer():
 
         # Flower 서버 시작
         fl.server.start_server(
-            server_address="0.0.0.0:8000",  # <-- 40025로 열어서 클라이언트가 붙도록(예시)
+            server_address="0.0.0.0:8000", 
             config=fl.server.ServerConfig(num_rounds=self.num_rounds),
             strategy=strategy,
         )
