@@ -3,7 +3,7 @@
 import hydra
 from omegaconf import DictConfig
 
-from fedops.server.app import FLServer
+# from fedops.server.app import FLServer
 
 from server.app import FLServer
 import models
