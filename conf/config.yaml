@@ -1,4 +1,4 @@
-# Common
+# Common conf/config.yaml
 random_seed: 42
 
 learning_rate: 0.001 # Input model's learning rate
@@ -17,7 +17,7 @@ dataset:
 
 
 # client
-task_id: 'mnist' # Input your Task Name that you register in FedOps Website
+task_id: 'mnist22' # Input your Task Name that you register in FedOps Website
 
 wandb: 
   use: true # Whether to use wandb
