@@ -17,7 +17,7 @@ import json
 from collections import OrderedDict
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig
 from peft import get_peft_model, LoraConfig, prepare_model_for_kbit_training
-
+import fedops
 # set log format
 handlers_list = [logging.StreamHandler()]
 
@@ -213,3 +213,36 @@ def gen_parameter_shape(cfg) -> None:
         json.dump(parameter_shapes, f, indent=2)
 
     print(f"[✓] {save_filename} saved to: {save_path}")
+    
+    
+# hyperparam
+
+def local_train(model, train_subset, lr, batch_size, epochs=10, device='cpu'):
+    import torch
+    import torch.optim as optim
+    from torch.utils.data import DataLoader
+    """
+    기존 GeneticCFL에서 사용하던 로컬 학습 함수 (모델 전체 학습).
+    지금은 client.py에서 local_train_wrapper 형태로 공유/퍼스널 분리했으므로
+    실제론 안 써도 되지만, 필요하다면 유지.
+    """
+    model.train()
+    optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
+    dataloader = DataLoader(train_subset, batch_size=batch_size, shuffle=True)
+    criterion = torch.nn.CrossEntropyLoss()
+    total_loss = 0.0
+
+    for epoch in range(epochs):
+        for images, labels in dataloader:
+            images, labels = images.to(device), labels.to(device)
+            optimizer.zero_grad()
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+            total_loss += loss.item()
+
+    if len(dataloader) > 0:
+        return total_loss / len(dataloader)
+    else:
+        return 0.0

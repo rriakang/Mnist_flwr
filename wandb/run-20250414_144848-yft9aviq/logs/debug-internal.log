@@ -5,3 +5,6 @@
 {"time":"2025-04-14T14:48:49.35529387+09:00","level":"INFO","msg":"handler: started","stream_id":"yft9aviq"}
 {"time":"2025-04-14T14:48:49.355344553+09:00","level":"INFO","msg":"sender: started","stream_id":"yft9aviq"}
 {"time":"2025-04-14T14:48:49.682522979+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-14T15:34:39.838773075+09:00","level":"INFO","msg":"stream: closing","id":"yft9aviq"}
+{"time":"2025-04-14T15:34:39.838813435+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-14T15:34:39.838923237+09:00","level":"INFO","msg":"Stopped system monitor"}

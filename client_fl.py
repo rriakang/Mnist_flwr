@@ -331,7 +331,7 @@ class FLClient(fl.client.NumPyClient):
                 # hyperparameter 모드: evaluate에서도 local_train을 하는 예시(주의!)
                 loss = client_utils.local_train(
                     model=self.model,
-                    train_subset=self.train_loader.dataset,
+                    train_subset=self.train_loader,
                     lr=lr,
                     batch_size=bs,
                     epochs=local_epochs,
@@ -339,7 +339,7 @@ class FLClient(fl.client.NumPyClient):
                 )
 
                 parameters_prime = self.get_parameters()
-                num_examples_test = len(self.train_loader.dataset)
+                num_examples_test = len(self.train_loader)
                 # "loss", "lr", "bs"
                 metrics = {
                     "loss": float(loss),
@@ -347,7 +347,7 @@ class FLClient(fl.client.NumPyClient):
                     "bs": int(bs)
                 }
                 test_loss = float(loss)
-                test_accuracy = 0.0  # 임의
+                test_loss, test_accuracy, metrics = self.test_torch(self.model, self.test_loader, self.cfg)
 
             except Exception as e:
                 logger.error(f"[Client {self.client_name}] Exception in evaluate (hyperparameter): {e}")

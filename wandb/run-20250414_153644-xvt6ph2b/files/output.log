@@ -1,0 +1,196 @@
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated.
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below:
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 15:36:45,182][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_numpy_client() is deprecated.
+	Instead, use `flwr.client.start_client()` by ensuring you first call the `.to_client()` method as shown below:
+	flwr.client.start_client(
+		server_address='<IP>:<PORT>',
+		client=FlowerClient().to_client(), # <-- where FlowerClient is of type flwr.client.NumPyClient object
+	)
+	Using `start_numpy_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[93mWARNING [0m:   DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 15:36:45,183][flwr][WARNING] - DEPRECATED FEATURE: flwr.client.start_client() is deprecated.
+	Instead, use the `flower-supernode` CLI command to start a SuperNode as shown below:
+
+		$ flower-supernode --insecure --superlink='<IP>:<PORT>'
+
+	To view all available options, run:
+
+		$ flower-supernode --help
+
+	Using `start_client()` is deprecated.
+
+            This is a deprecated feature. It will be removed
+            entirely in future versions of Flower.
+
+[2025-04-14 15:36:45,197][flwr][DEBUG] - Opened insecure gRPC connection (no certificates were passed)
+[2025-04-14 15:36:45,201][flwr][DEBUG] - ChannelConnectivity.IDLE
+[2025-04-14 15:36:45,203][flwr][DEBUG] - ChannelConnectivity.CONNECTING
+[2025-04-14 15:36:45,208][flwr][DEBUG] - ChannelConnectivity.TRANSIENT_FAILURE
+[2025-04-14 15:36:45,411][flwr][DEBUG] - gRPC channel closed
+[2025-04-14 15:36:45,412][root][INFO] - [E][PC0002] learning <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-14T15:36:45.207659236+09:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"}"
+>
+[2025-04-14 15:36:45,413][root][INFO] - notify_fail start
+[2025-04-14 15:36:45,434][root][ERROR] - trainFin
+[31mERROR[0m:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/responses.py", line 160, in __call__
+    await self.background()
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/background.py", line 41, in __call__
+    await task()
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/starlette/background.py", line 26, in __call__
+    await self.func(*self.args, **self.kwargs)
+  File "/home/ccl/safer/FedOps/MNIST/app.py", line 211, in fl_client_start
+    raise e
+  File "/home/ccl/safer/FedOps/MNIST/app.py", line 174, in fl_client_start
+    await loop.run_in_executor(None, client_start)
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 731, in start_numpy_client
+    start_client(
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 201, in start_client
+    start_client_internal(
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/app.py", line 438, in start_client_internal
+    message = receive()
+              ^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/flwr/client/grpc_client/connection.py", line 142, in receive
+    proto = next(server_message_iterator)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/grpc/_channel.py", line 543, in __next__
+    return self._next()
+           ^^^^^^^^^^^^
+  File "/home/ccl/anaconda3/envs/fedops_hyp/lib/python3.11/site-packages/grpc/_channel.py", line 969, in _next
+    raise self
+grpc._channel._MultiThreadedRendezvous: <_MultiThreadedRendezvous of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-04-14T15:36:45.207659236+09:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:192.9.201.228:40025: Socket closed"}"
+>
+[32mINFO[0m:     127.0.0.1:60580 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60586 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48542 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57000 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57004 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43050 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43052 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50982 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59988 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60002 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60766 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44522 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:44534 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48228 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50476 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:50478 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56848 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57674 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57678 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56498 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60530 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60540 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58418 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53536 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:53548 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56072 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60440 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60444 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52638 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52652 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36724 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:36734 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56114 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46396 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:46400 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:57800 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60442 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:60450 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:54412 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52400 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52406 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56786 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40308 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:40312 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:45772 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59548 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:59560 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:42488 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48014 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:48022 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:43962 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52400 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:52416 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55610 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:55624 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34430 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37076 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:37084 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56228 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56608 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:56610 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:49430 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34400 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:34404 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
+[32mINFO[0m:     127.0.0.1:58962 - "[1mGET /online HTTP/1.1[0m" [32m200 OK[0m
