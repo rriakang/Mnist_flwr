@@ -7,7 +7,7 @@ class ServerAPI():
     def __init__(self, task_id):
         self.task_id = task_id
         self.server_manager_address = '10.102.217.157'
-        self.server_manager_port = '40025'
+        self.server_manager_port = '8000'
         self.performance_address = '10.100.33.100'
         self.performance_port = '8001'
 
