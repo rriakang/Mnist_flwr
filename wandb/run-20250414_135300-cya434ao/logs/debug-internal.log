@@ -1,0 +1,15 @@
+{"time":"2025-04-14T13:53:00.479823594+09:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/ccl/safer/FedOps/MNIST/wandb/run-20250414_135300-cya434ao/logs/debug-core.log"}
+{"time":"2025-04-14T13:53:00.916221633+09:00","level":"INFO","msg":"created new stream","id":"cya434ao"}
+{"time":"2025-04-14T13:53:00.91632459+09:00","level":"INFO","msg":"stream: started","id":"cya434ao"}
+{"time":"2025-04-14T13:53:00.916363763+09:00","level":"INFO","msg":"handler: started","stream_id":"cya434ao"}
+{"time":"2025-04-14T13:53:00.916368079+09:00","level":"INFO","msg":"sender: started","stream_id":"cya434ao"}
+{"time":"2025-04-14T13:53:00.916392422+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"cya434ao"}
+{"time":"2025-04-14T13:53:01.248892829+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-14T13:54:46.371345073+09:00","level":"INFO","msg":"stream: closing","id":"cya434ao"}
+{"time":"2025-04-14T13:54:46.371396464+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-14T13:54:46.371512214+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-14T13:54:47.400475175+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-14T13:54:47.710541113+09:00","level":"INFO","msg":"handler: closed","stream_id":"cya434ao"}
+{"time":"2025-04-14T13:54:47.710613979+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"cya434ao"}
+{"time":"2025-04-14T13:54:47.7106414+09:00","level":"INFO","msg":"sender: closed","stream_id":"cya434ao"}
+{"time":"2025-04-14T13:54:47.710734169+09:00","level":"INFO","msg":"stream: closed","id":"cya434ao"}
