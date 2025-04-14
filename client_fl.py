@@ -1,3 +1,4 @@
+#client_fl.py
 from collections import OrderedDict
 import json, logging
 import flwr as fl
@@ -230,7 +231,7 @@ class FLClient(fl.client.NumPyClient):
                 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
                 self.device = device
 
-                logger.info(f"[Client {self.client_name}] train_loader size: {len(self.train_loader.dataset)}")
+                logger.info(f"[Client {self.client_name}] train_loader size: {len(self.train_loader)}")
 
                 self.set_parameters(parameters)
 
@@ -242,7 +243,7 @@ class FLClient(fl.client.NumPyClient):
                 # 실제 local_train
                 loss = client_utils.local_train(
                     model=self.model,
-                    train_subset=self.train_loader.dataset,
+                    train_subset=self.train_loader,
                     lr=lr,
                     batch_size=batch_size,
                     epochs=epochs,
@@ -250,7 +251,7 @@ class FLClient(fl.client.NumPyClient):
                 )
 
                 parameters_prime = self.get_parameters()
-                num_examples_train = len(self.train_loader.dataset)
+                num_examples_train = len(self.train_loader)
 
                 os.makedirs(os.path.dirname(model_path), exist_ok=True)
                 torch.save(self.model.state_dict(), model_path + '.pth')
