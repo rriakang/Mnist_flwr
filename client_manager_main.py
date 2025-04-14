@@ -246,26 +246,23 @@ async def check_flclient_online():
             logging.info('client offline')
             pass
 
-        # 여기가 핵심 – inform_SE 대신 직접 server_url 구성
-        server_url = f"http://{manager.server_ST}/FLSe/"
+        res_task = requests.put(inform_SE + 'RegisterFLTask',
+                       data=json.dumps({
+                           'FL_task_ID': manager.task_id,
+                           'Device_mac': manager.client_mac,
+                           'Device_hostname': manager.client_name,
+                           'Device_online': manager.client_online,
+                           'Device_training': manager.client_training,
+                       }))
 
-        # RegisterFLTask 호출
-        data_payload = {
-            'FL_task_ID': manager.task_id,
-            'Device_mac': manager.client_mac,
-            'Device_hostname': manager.client_name,
-            'Device_online': manager.client_online,
-            'Device_training': manager.client_training,
-            # 필요하다면 'model_type': 'hyperparameter' 등 넣을 수도 있음
-        }
-        try:
-            res_task = requests.put(server_url + 'RegisterFLTask', data=json.dumps(data_payload))
-            if res_task.status_code == 200:
-                logging.info("RegisterFLTask success")
-            else:
-                logging.error('FLSe/RegisterFLTask: server_ST offline')
-        except Exception as e:
-            logging.error(f"[E] registerFLTask: {e}")
+        if res_task.status_code == 200:
+            pass
+        else:
+            logging.error('FLSe/RegisterFLTask: server_ST offline')
+            pass
+        
+    else:
+        pass
 
     await asyncio.sleep(6)
     return manager
